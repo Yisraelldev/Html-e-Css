@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5</title>
+</head>
+<body>
+    <h1>Adaptação de imagens no HTML</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador</p>
+
+<!-- A tag pictures permite que apareça varias imagens aqui usando vários source de midia-->
+<picture>
+    <source media="(max-width: 750px)" srcset="imagens/foto_P.png" type="image/png">
+    <source media="(max-width: 1050px)" srcset="imagens/foto_M.png" type="image/png">
+    <!--img é a tag princinpal para usar dentro da tag picture, use a hieraqui correta as menores imagens sempre em imagens acima de img e dos porximos source, use sempre-->
+        <img src="Imagens/foto_G.png" alt="imagem flexível">
+</picture>
+
+<h1>Reproduzindo Áudio</h1>
+<!--<p>Vamos aprender a reproduzir áudios en html5</p>
+<audio src="audios/Steve vai.mp3" controls autoplay></audio>-->
+<!--tag AUDIO pesquiso o meu mp3 depois da tag src-> vou colocar os meus parametros para que a reprodução aconteça que são CONTROLS e AUTOPLAY-->
+
+<audio preload="auto" autoplay controls>
+    <!--preload auto= ele só vai considerar o carregamento só depois que todo o áudio for carregado também
+    
+    metadata= vai carregar só nome do aquivo e informações do audio
+
+    none= não carrega nada só quando o usuário carregar o play nos downloads
+    -->
+    <source src="audios/Blues.mp3" type="audio/mpeg">
+    <!-- se caso ele não conseguir carregar esse arquivo ele pula para o proximo source em outro formato de áudio-->
+    <source src="audios/Steve vai.ogg" type="audio/ogg">
+    <source src="audios/Blues.wav" type="audio/wav">
+    <!-- MP3, WAV, OGG  cuidado com wav arquivos extremamentess grandes e carregamento demorado-->
+
+        <p>Infelizmente seu navegador não consehue reproduziar o seu arquivo mp3 <a href="audios/Blues.mp3"> CLique aqui para download</a></p>
+
+</audio>
+
+<p>Infelizmente seu navegador não consehue reproduziar o seu arquivo mp3 <a href="audios/Blues.mp3"> CLique aqui para download</a></p>
+
+</body>
+</html>
